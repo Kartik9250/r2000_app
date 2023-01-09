@@ -52,7 +52,7 @@ class lidar_plot:
 		# bool
 		vis = self.annot.get_visible()
 		# if on the point, update the annot and show on the canvas
-		if self.event.inaxes == self.ax:
+		if event.inaxes == self.ax:
 			cont, ind = self.scatter.contains(event)
 			if cont:
 				self.update_annot(ind)
