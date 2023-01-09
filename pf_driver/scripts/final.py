@@ -39,8 +39,8 @@ class lidar_plot:
 		for k, v in self.num_d.items():
 			k_lst.append(k)
 			v_lst.append(v)
-		print(k_lst, v_lst)
 		ans_lst = []
+		print([ind['ind']])
 		for line in v_lst:
 			ans_lst.append(line[int(ind['ind'])])
 		
@@ -106,7 +106,7 @@ class lidar_plot:
 
 if __name__ == "__main__":
 	rospy.init_node("scan_node", anonymous=False)
-	scan_topic = "/laser/scan"
+	scan_topic = "/scan"
 	read = lidar_plot(scan_topic)
 	read.start()
 	# plt.axes("equal")
