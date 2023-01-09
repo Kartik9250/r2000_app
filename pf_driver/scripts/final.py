@@ -26,7 +26,7 @@ class lidar_plot:
 		plt.grid()
 		self.annot = self.ax.annotate("", xy=(0,0), xytext=(10,10), textcoords='offset points',
 					  bbox=dict(boxstyle='round', fc='w'))
-		self.annot.set_visible(False)
+		self.annot.set_visible(True)
 		self.fig.canvas.mpl_connect("motion_notify_event", self.hover)
 	
 	def update_annot(self, ind):
