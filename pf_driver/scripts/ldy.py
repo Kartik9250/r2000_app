@@ -3,7 +3,7 @@
 import rospy
 from sensor_msgs.msg import LaserScan
 import pandas as pd
-path = '/home/noemoji041/int_catkin/src/pf_lidar_ros_driver/pf_driver/data/Output.xlsm'
+path = '/home/noemoji041/int_catkin/src/pf_lidar_ros_driver/pf_driver/data/ok.csv'
 df = pd.DataFrame()
 
 
@@ -15,10 +15,10 @@ def callback(data):
     df['intensities'] = list2
     list3 = []
     for i in range(len(data.ranges)):
-        ray_angle = data.angle_min + (i * data.angle_increment)
+        ray_angle = (data.angle_min + (i * data.angle_increment))*57.2957795131
         list3.append(ray_angle)
     df['ray_angle'] = list3
-    df.to_excel(path, index= False)
+    df.to_csv(path, index= False)
 
     
         
