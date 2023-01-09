@@ -14,7 +14,7 @@ class lidar_plot:
         print(scan_topic)
         self.scan_info = rospy.Subscriber(
             scan_topic, LaserScan, self._scan_registration)
-        self.fig = plt.figure()
+        self.fig = plt.figure(figsize=(10,5))
         self.ax = plt.axes()
         self.ax.set_xlim(10, -15)
         self.ax.set_ylim(8, -8)
