@@ -42,7 +42,10 @@ class lidar_plot:
 		ans_lst = []
 		print([ind['ind']])
 		for line in v_lst:
-			ans_lst.append(line[int(ind['ind'])])
+			try:
+				ans_lst.append(line[int(ind['ind'])])
+			except:
+				ans_lst.append(line[int(ind['ind'][0])])
 		
 		text = f"{k_lst[0]}:{ans_lst[0]}"
 														
